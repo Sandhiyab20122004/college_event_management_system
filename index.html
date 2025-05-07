@@ -1,0 +1,16 @@
+{% extends "booking/base.html" %}
+
+{% block title %}Events{% endblock %}
+
+{% block introduction %}
+<p>Discover and book tickets for the best events in town! From concerts to theater shows, we've got you covered. Secure your spot now and enjoy an unforgettable experience.</p>
+{% endblock %}
+
+{% block content %}
+<h1>Upcoming Events</h1>
+<ul>
+    {% for event in events %}
+        <li><a href="{% url 'event_detail' event.id %}">{{ event.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
